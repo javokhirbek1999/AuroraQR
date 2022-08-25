@@ -1,0 +1,30 @@
+.message {
+    text-align: center;
+     margin-top: 15%;
+        color: rgb(31, 0, 117);
+ }
+ #btn{
+     background-color:rgb(227, 222, 245);
+     color:  rgb(31, 0, 117);
+ }
+ #btn:hover {
+     background-color:  rgb(31, 0, 117);
+ color: white;
+ }
+ #btn a{
+     color:  rgb(31, 0, 117);
+ }
+#btnQR button{
+    font-weight: bold;
+    border-radius: 10px;
+    border: none 1px;
+    margin-left: 20%;
+    margin-top: 35%;
+    height: 80px;
+    width: 250px;
+    background-color:rgb(227, 222, 245);
+    color:  rgb(31, 0, 117);
+} 
+#btnQR button:hover{
+background-color:  rgb(31, 0, 117);
+ color: white;} 

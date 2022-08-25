@@ -1,0 +1,25 @@
+.message {
+    text-align: center;
+     margin-top: 15%;
+        color: rgb(31, 0, 117);
+ }
+ #btn{
+     background-color:rgb(227, 222, 245);
+     color:  rgb(31, 0, 117);
+ }
+ #btn:hover {
+     background-color:  rgb(31, 0, 117);
+ color: white;
+ }
+ #btn a{
+     color:  rgb(31, 0, 117);
+ }
+.btn{
+    margin-top: 8%;
+    margin-left: 10%;
+    height: 170px;
+    width: 170px;
+} 
+.btnColor button{
+    font-weight: bold;
+}
