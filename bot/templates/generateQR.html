@@ -1,0 +1,14 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block title %}Generate QR{% endblock title %}
+{% block content %} 
+    <link rel="stylesheet" href="{% static 'generateQr.css' %}">
+    <div style="margin-top: 15%; color: rgb(31, 0, 117);">
+     <h5 style="margin-left: 22%">Enter the Link or Data</h5>
+        <div class="input-group mb-3" style="width:50%; height: 70px; margin-left: 22%;">
+                   <input type="text" class="form-control" placeholder="Enter the link or data" aria-label="Recipient's username" aria-describedby="button-addon2">
+            <button class="btn btn-outline-secondary" type="button" id="btn">Next</button>
+          </div>
+    </div>
+    <script src="{% static 'js/generateQr.js' %}" ></script>
+{% endblock content %}

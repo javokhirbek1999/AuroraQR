@@ -1,0 +1,11 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block title %}QR code {% endblock title %}
+{% block content %}
+    <link rel="stylesheet" href="{% static 'css/QRcode.css' %}">
+      <div class="d-grid gap-2 d-md-block" id="btnQR">
+        <button  type="button">Download PNG</button>
+        <button  type="button">Back</button>
+      </div>
+      <script src="{% static 'js/generateQr.js' %}" ></script>
+{% endblock content %}

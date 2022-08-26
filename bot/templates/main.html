@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,13 +9,14 @@
   <!-- CSS only -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-  <link rel="stylesheet" href="main.css">
-  <title>Document</title>
+  <link rel="stylesheet" href="{% static 'css/main.css' %}">
+  <title>{% block title %} Home {% endblock title %}</title>
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg bg-light">
-    <div class="container-fluid" style="margin-left:80%;">
+  <nav class="navbar navbar-expand-lg bg-light" style="box-shadow:1px 2px 5px #777">
+    <div class="container-fluid" >
+      <a class="navbar-brand" href="{% url 'home' %}"><img src="{% static 'css/bot.png' %}" alt="AuroraQR"></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -22,33 +24,37 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link active" href="main.html"  style="color:  rgb(31, 0, 117);font-weight: bold;">Home</a>
+            <a class="nav-link active" href="{% url 'home' %}" style="color:  rgb(31, 0, 117);font-weight: bold;">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="about.html"  style="color:  rgb(31, 0, 117);font-weight: bold;">About</a>
+            <a class="nav-link active" href="{% url 'about' %}" style="color:  rgb(31, 0, 117);font-weight: bold;">About</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="help.html"  style="color:  rgb(31, 0, 117);font-weight: bold;">Help</a>
+            <a class="nav-link active" href="{% url 'help' %}" style="color:  rgb(31, 0, 117);font-weight: bold;">Help</a>
           </li>
         </ul>
       </div>
     </div>
   </nav>
-  <!-- {% block content %} -->
+  {% block content %}
   <div class="message" style="border:none 1px; margin-top:15%; margin-left:36%; width: 30%; color: rgb(31, 0, 117);">
     <p>
-      <h5 >What can this bot do?</h5>Aurora QR Bot - that generates QR code
+      <h5>What can this bot do?</h5>Aurora QR Bot - that generates QR code
       with different <br> types of customizations
     </p>
   </div>
-  <div class="d-grid gap-2 col-6 mx-auto" >
-  <a href="generateQR.html">  <button id="btn" type="button" style="border-radius: 10px; border: none 1px; margin-top: 28%; margin-left: 20%; width: 400px; height: 80px;"onclick="generateQR"><h5>Generate QR</h5></button> </a>
+  <div class="d-grid gap-2 col-6 mx-auto">
+    <a href="{% url 'generateQr' %}"> <button id="btn" type="button"
+        style="border-radius: 10px; border: none 1px; margin-top: 28%; margin-left: 20%; width: 400px; height: 80px;"
+        onclick="generateQR">
+        <h5>Generate QR</h5>
+      </button> </a>
   </div>
-  <!-- {% endblock content %} -->
+  {% endblock content %}
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous">
   </script>
-  <script src="generateQR.js"></script>
+  <script src="../static/js/generateQR.js"></script>
 </body>
 
 </html>
